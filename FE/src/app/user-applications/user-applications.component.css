@@ -1,0 +1,23 @@
+.filterClass{
+    text-align:left
+}
+.applications{
+    height: -webkit-fill-available;
+    background-color: lightgrey;
+}
+
+.mat-form-field-appearance-legacy  {
+    padding: .4375em 0;
+    width: 40%;
+    
+}
+.addClass{
+    background: #673ab7;
+    color: white;
+    top:50px;
+    float:right;
+    margin-top: -15px
+}
+.table{
+    margin-top: 60px
+}

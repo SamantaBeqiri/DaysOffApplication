@@ -1,0 +1,31 @@
+<mat-card style="box-shadow: 3px 3px 3px 3px #8A2BE2">
+<mat-card-header>
+        <mat-card-title style="color:blueviolet">{{isUpdate? 'Update user': 'Add new user'}}</mat-card-title>
+      </mat-card-header> 
+<mat-dialog-content>
+    <form [formGroup]="formGroup">
+        <mat-form-field>
+            <input matInput formControlName="name" placeholder="Name">
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <input matInput formControlName="surname" placeholder="Surname">
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <input matInput formControlName="username" placeholder="Username">
+        </mat-form-field>
+        <br>
+        <mat-form-field *ngIf="!isUpdate">
+            <input matInput formControlName="password" placeholder="Password" type="password">
+            
+        </mat-form-field>
+      
+       
+    </form>
+</mat-dialog-content>
+<mat-dialog-actions align="end" style="margin-right:200px">
+    <button mat-raised-button (click)="save()" [disabled]="!formGroup.valid">Save</button>
+    <button mat-raised-button (click)="close()">Cancel</button>
+</mat-dialog-actions>
+</mat-card>

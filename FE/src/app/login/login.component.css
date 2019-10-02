@@ -1,0 +1,21 @@
+
+.login-main{
+  display:flex;
+
+  
+
+  }
+  mat-card{
+ margin:0 auto;
+ min-width: 20%;
+ margin-top:200px;
+ 
+ 
+  }
+  .button{
+    left:-270px;
+    width:70px;
+  }
+  
+ 
+ 

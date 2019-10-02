@@ -1,0 +1,28 @@
+<mat-card style="box-shadow: 3px 3px 3px 3px #8A2BE2">
+        <mat-card-header>
+                <mat-card-title style="color:blueviolet">{{isUpdate? 'Update application': 'Add new application'}}</mat-card-title>
+              </mat-card-header> 
+              <br><br>
+              <mat-card-content>
+    <form [formGroup]="formGroup">
+        <mat-form-field>
+            <input matInput [matDatepicker]="pickerFrom" formControlName="dateFrom"
+                   placeholder="Start Date" [min]="minStartDate" #startDate>
+            <mat-datepicker-toggle matSuffix [for]="pickerFrom"></mat-datepicker-toggle>
+            <mat-datepicker #pickerFrom></mat-datepicker>
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <input matInput [matDatepicker]="pickerTo" formControlName="dateTo"
+                   placeholder="End Date" [min]="startDate.value" #endDate>
+            <mat-datepicker-toggle matSuffix [for]="pickerTo"></mat-datepicker-toggle>
+            <mat-datepicker #pickerTo></mat-datepicker>
+        </mat-form-field>
+    </form>
+</mat-card-content>
+
+<mat-dialog-actions align="end" style="margin-right:200px">
+    <button mat-raised-button (click)="save()" [disabled]="!formGroup.valid">{{isUpdate? 'Update': 'Save'}}</button>
+    <button mat-raised-button (click)="close()">Close</button>
+</mat-dialog-actions>
+</mat-card>
